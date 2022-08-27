@@ -1,3 +1,8 @@
 #- name: Import common role to set hostname
 #  ansible.builtin.import_role:
 #    name: common
+
+- name: copy mongodb repo file
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo

@@ -1,5 +1,3 @@
-- name: Download frontend Content & Extract it
-  ansible.builtin.unarchive:
-    src: "https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo"
-    dest: /tmp
-    remote_src: yes
+- name: Import common role to set hostname
+  ansible.builtin.import_role:
+    name: common

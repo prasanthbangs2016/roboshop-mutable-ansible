@@ -1,2 +1,2 @@
 COMPONENT: mongodb
-APP_TYPE: nodejs
+APP_TYPE: database

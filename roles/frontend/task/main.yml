@@ -19,6 +19,11 @@
     dest: /tmp
     remote_src: yes
 
+- name: Copy nginx conf
+  ansible.builtin.copy:
+    name: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
 - name: Copy frontend content to nginx
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/

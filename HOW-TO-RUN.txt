@@ -1,6 +1,7 @@
-ansible-playbook -i inv-roboshop -e ansible_user=centos -e ansible_password=DevOps321 -e APP_COMPONENT_NAME=FRONTEND -e HOSTS=frontend roboshop.yml
+ansible-playbook -i inv-roboshop -e ansible_user=centos -e ansible_password=DevOps321 -e APP_COMPONENT_NAME=frontend -e HOSTS=FRONTEND roboshop.yml
 
-ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_NAME=frontend -e HOSTS=FRONTEND
+or
+
 
 
 ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_NAME=frontend -e HOSTS=localhost

@@ -3,7 +3,7 @@
     src: redis.repo
     dest: /etc/yum.repos.d/redis.repo
 
-- name: Install mongodb
+- name: Install redis
   ansible.builtin.yum:
    name: redis-6.2.7
    state: installed

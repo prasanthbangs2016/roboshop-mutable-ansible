@@ -1,0 +1,23 @@
+#- name: Import common role to set hostname
+#  ansible.builtin.import_role:
+#    name: common
+
+- name: copy mysql repo file
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+# yum install -y mongodb-org
+# systemctl enable mongod
+# systemctl start mongod
+
+- name: Install mysql
+  ansible.builtin.yum:
+    name: mysql-community-server
+    state: installed
+
+- name: start mysql service
+  ansible.builtin.systemd:
+    name: mysql
+    state: restarted
+    enabled: yes

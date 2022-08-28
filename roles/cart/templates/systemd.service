@@ -1,0 +1,13 @@
+
+[Unit]
+Description = Cart Service
+[Service]
+User=roboshop
+Environment=MONGO=true
+Environment=REDIS_HOST=redis-{{ENV}}.roboshop.ppk
+Environment=CATALOGUE_HOST=catalogue-{{ENV}}.roboshop.ppk
+ExecStart=/bin/node /home/roboshop/cart/server.js
+SyslogIdentifier=cart
+
+[Install]
+WantedBy=multi-user.target

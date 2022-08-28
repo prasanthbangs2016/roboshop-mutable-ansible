@@ -27,9 +27,21 @@
     src: /var/log/mysqld.log
   register: mysql_log
 
+
 - name: print mysql_log and decoding from encoded log
   debug:
     msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
+
+
+- name: print mysql_log and decoding from encoded log
+  ansible.builtin.set_fact:
+    DEFAULT_PASS: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
+
+- name: Get MySQL version to check db connection
+  mysql_info:
+    login_user: root
+    login_password: "{{MYSQL_PASSWORD}}"
+    filter: version
 
 
 

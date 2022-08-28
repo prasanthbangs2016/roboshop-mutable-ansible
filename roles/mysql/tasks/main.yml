@@ -16,7 +16,6 @@
     name: 
       - mysql-community-server
       - MySQL-python
-      - PyMySQL
     state: installed
 
 - name: start mysql service

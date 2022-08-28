@@ -20,5 +20,12 @@ ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible ro
 
 ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=cart -e HOSTS=localhost -e ENV=dev
 
-ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=mysql -e HOSTS=localhost -e ENV=dev -e MYSQL_PASSWORD=Roboshop@1
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=mysql -e HOSTS=localhost -e MYSQL_PASSWORD=Roboshop@1 -e ENV=dev 
+
+
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "The PyMySQL (Python 2.7 and Python 3.X) or MySQL-python (Python 2.X) module is required."}
+
+sudo yum list all | grep mysql -i | grep python -i
+
+
 

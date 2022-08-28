@@ -14,3 +14,9 @@ ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible ro
 
 ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=catalogue -e HOSTS=localhost -e ENV=dev
 
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=redis -e HOSTS=localhost -e ENV=dev
+
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=user -e HOSTS=localhost -e ENV=dev
+
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=cart -e HOSTS=localhost -e ENV=dev
+

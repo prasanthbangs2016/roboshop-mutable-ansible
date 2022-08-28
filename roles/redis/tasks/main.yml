@@ -10,7 +10,7 @@
 
 - name: Update redis config file
   ansible.builtin.replace:
-    path: /etc/redis.repo
+    path: "{{item}}"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
   loop:

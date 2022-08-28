@@ -21,3 +21,12 @@
     name: mysqld
     state: restarted
     enabled: yes
+
+- name: Load mysql log file
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: mysql_log
+
+- name: print mysql_log
+  debug:
+    msg: "{{mysql_log}}"

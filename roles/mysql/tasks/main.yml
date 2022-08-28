@@ -13,7 +13,9 @@
 
 - name: Install mysql
   ansible.builtin.yum:
-    name: mysql-community-server
+    name: 
+    - mysql-community-server
+    - MySQL-python
     state: installed
 
 - name: start mysql service
@@ -33,7 +35,7 @@
     msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
 
 
-- name: print mysql_log and decoding from encoded log
+- name: declare facts
   ansible.builtin.set_fact:
     DEFAULT_PASS: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
 

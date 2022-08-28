@@ -24,7 +24,7 @@
 
 - name: Copy {{COMPONENT}} Content
   ansible.builtin.copy:
-    src: /tmp/catalogue-main/
+    src: /tmp/{{COMPONENT}}-main/
     dest: /home/roboshop/{{COMPONENT}}
     remote_src: yes
   become_user: roboshop

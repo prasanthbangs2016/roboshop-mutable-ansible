@@ -29,4 +29,6 @@
 
 - name: print mysql_log
   debug:
-    msg: "{{mysql_log}}"
+    msg: "{{mysql_log['content'] | b64decode}}"
+
+

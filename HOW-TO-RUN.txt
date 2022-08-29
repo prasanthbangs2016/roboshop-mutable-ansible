@@ -29,5 +29,19 @@ sudo yum list all | grep mysql -i | grep python -i
 
 sudo yum install python36-PyMySQL.noarch
 
+====================================================================================================================================================
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e MYSQL_PASSWORD=Roboshop@1 -e ENV=dev 
+
+or
+ansible-playbook -i inv-roboshop -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev e MYSQL_PASSWORD=Roboshop@1 roboshop-full.yml
+
+=======================================================================================================================================================
+
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=shipping -e HOSTS=localhost -e ENV=dev
+
+ansible-pull -U https://github.com/prasanthbangs2016/roboshop-mutable-ansible roboshop.yml -e APP_COMPONENT_ROLE=rabbitmq -e RABBITMQ_PASSWORD=roboshop123 -e HOSTS=localhost -e ENV=dev
+
+
+
 
 

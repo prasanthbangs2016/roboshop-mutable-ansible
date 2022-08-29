@@ -60,12 +60,8 @@
       register: mysql_conn_status
 
   rescue:
-    - name: Get MySQL version to check the DB Connection
-      mysql_info:
-        login_user: root
-        login_password: "{{DEFAULT_PASS}}"
-        filter: version
-      register: mysql_conn_status
+    - name: change mysql password
+      ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASS}}"
 
     
 

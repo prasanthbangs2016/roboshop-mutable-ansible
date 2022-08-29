@@ -33,9 +33,9 @@
 
 
 
-- name: print
-  debug:
-    print "{{mysql_conn_status}}"
+#- name: print
+  #debug:
+    #print "{{mysql_conn_status}}"
 
 - name: Handle the error
   block:

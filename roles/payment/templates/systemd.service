@@ -1,0 +1,13 @@
+[Unit]
+Description = Dispatch Service
+[Service]
+User=roboshop
+Environment=CART_HOST=cart-{{ENV}}.roboshop.ppk
+Environment=AMQP_HOST=rabbitmq-{{ENV}}.roboshop.ppk
+Environment=AMQP_USER=user-{{ENV}}.roboshop.ppk
+Environment=AMQP_PASS={{RABBITMQ_PASSWORD}}
+ExecStart=/home/roboshop/dispatch/dispatch
+SyslogIdentifier=dispatch
+
+[Install]
+WantedBy=multi-user.target

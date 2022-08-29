@@ -27,9 +27,9 @@
 
 
 
-- name: print mysql_log and decoding from encoded log
-  debug:
-    msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
+#- name: print mysql_log and decoding from encoded log
+  #debug:
+    #msg: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
 
 
 

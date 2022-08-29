@@ -18,7 +18,7 @@
 - name: add a roboshop rabbitmq user
   community.rabbitmq.rabbitmq_user:
     user: roboshop
-    password: {{RABBITMQ_PASSWORD}}
+    password: "{{RABBITMQ_PASSWORD}}"
     tags: administrator
     vhost: /
     configure_priv: .*

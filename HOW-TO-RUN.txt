@@ -27,5 +27,7 @@ fatal: [localhost]: FAILED! => {"changed": false, "msg": "The PyMySQL (Python 2.
 
 sudo yum list all | grep mysql -i | grep python -i
 
+sudo yum install python36-PyMySQL.noarch
+
 
 

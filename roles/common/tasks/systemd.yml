@@ -3,23 +3,6 @@
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
     
-- name: Install prometheus node exporter
-  ansible.builtin.include_role:
-    name: prometheus
-    tasks_from: client
-
-
-- name: create rsyslog configuration
-  ansible.builtin.template:
-    src: rsyslog.conf
-    dest: /etc/rsyslog.d/{{COMPONENT}}.conf
-  when: APP_TYPE == "java" or APP_TYPE == "python" or APP_TYPE == "nodejs"
-
-- name: restart rsyslog 
-  ansible.builtin.systemd:
-    name: rsyslog
-    state: restarted
-  when: APP_TYPE == "java" or APP_TYPE == "python" or APP_TYPE == "nodejs"
 
 - name: restart {{COMPONENT}}
   ansible.builtin.systemd:

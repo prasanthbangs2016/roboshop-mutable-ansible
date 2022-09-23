@@ -54,7 +54,7 @@ ansible-pull -U https://github.com/prasanthbangs2016/mine 3-infra/create-ssm-par
 =======================================================================================================================================================================
 roboshop-full.yml
 ==================
-ansible-playbook -i inv-roboshop roboshop-full.yml -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev -e MYSQL_PASSWORD=Roboshop@1 -e RABBITMQ_PASSWORD=roboshop123
+ansible-playbook -i inv-roboshop roboshop-full.yml -e LOGSTASH=true -e ansible_user=centos -e ansible_password=DevOps321 -e ENV=dev -e MYSQL_PASSWORD=Roboshop@1 -e RABBITMQ_PASSWORD=roboshop123
 
 
 

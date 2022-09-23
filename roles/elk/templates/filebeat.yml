@@ -2,7 +2,7 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - {{LOGFILE}}
+    - {{LOG_FILE}}
   fields:
     component: {{COMPONENT}}
 

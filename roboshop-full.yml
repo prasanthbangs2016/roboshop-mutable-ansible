@@ -3,6 +3,7 @@
   become: yes
   roles:
     - frontend
+    - elk
 
 - name: Setup RoboShop
   hosts: MONGODB
@@ -15,6 +16,7 @@
   become: yes
   roles:
     - catalogue
+    - elk
 
 - name: Setup RoboShop
   hosts: REDIS
@@ -27,6 +29,7 @@
   become: yes
   roles:
     - user
+    - elk
 
 - name: Setup RoboShop
   hosts: MYSQL
@@ -39,6 +42,7 @@
   become: yes
   roles:
     - shipping
+    - elk
 
 - name: Setup RoboShop
   hosts: RABBITMQ
@@ -51,6 +55,7 @@
   become: yes
   roles:
     - payment
+    - elk
 
 - name: Setup RoboShop
   hosts: CART

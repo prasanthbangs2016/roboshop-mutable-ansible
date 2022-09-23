@@ -2,10 +2,7 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - {{LOG_FILE:}}
-  fields:
-    component: {{COMPONENT}}
-
+    - /var/log/nginx/access.log
 
 output.logstash:
   hosts: ["logstash.roboshop.ppk:5044"]

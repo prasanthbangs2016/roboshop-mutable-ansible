@@ -62,9 +62,3 @@
   become: yes
   roles:
     - cart
-    
-- name: Setup RoboShop
-  hosts: CART
-  become: yes
-  roles:
-    - elk

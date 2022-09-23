@@ -1,2 +1,3 @@
 COMPONENT: catalogue
 APP_TYPE: nodejs
+LOGFILE: /var/log/catalogue.log
